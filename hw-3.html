@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-3</title>
+</head>
+
+<body>
+    <!-- 猜數字遊戲 -->
+    <!-- 請輸入猜測的數字(1~100)，輸入0離開遊戲 =>50
+        數字太大!
+        請輸入猜測的數字(1~100)，輸入0離開遊戲 =>25
+        數字太大!
+        請輸入猜測的數字(1~100)，輸入0離開遊戲 =>12
+        數字太大!
+        請輸入猜測的數字(1~100)，輸入0離開遊戲 =>6
+        猜中數字 = 6 -->
+    <script>
+        function random() {
+            let randomNum = Math.random(); // 隨機取得0-1之間的值
+            console.log(randomNum * 100);
+            let guessNum = Math.floor(randomNum * 100); //取整數
+
+            while (true) {
+                const InputNum = parseInt(prompt("猜數字遊戲,請輸入數字:"));
+                if (guessNum == InputNum) {
+                    alert(`猜中數字＝${guessNum}`);
+                    console.log(guessNum);
+                    break;
+                }
+                else if (guessNum > InputNum) {
+                    alert("數字太小！")
+                }
+                else {
+                    alert("數字太大！")
+                }
+            }
+        }
+        console.log(random);
+        random();
+
+    </script>
+
+
+</body>
+
+</html>

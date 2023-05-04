@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-4</title>
+</head>
+
+<body>
+    <!-- 輸入西元年，判斷是否是閏年 -->
+    <!-- 
+        西元除以400可整除，為閏年。
+        西元除以4可整除但除以100不可整除，為閏年。
+        西元除以4不可整除，為平年。
+        西元除以100可整除但除以400不可整除，為平年 
+    -->
+
+    <script>
+        function year() {
+            const year = parseInt(prompt("請輸入西元年："))
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                alert(`西元${year}，為閏年`);
+            }
+            else {
+                alert(`西元${year}，為平年`);
+            }
+        }
+
+        year();
+
+    </script>
+
+
+</body>
+
+</html>

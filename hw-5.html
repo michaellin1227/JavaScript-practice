@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-5</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 請畫出九九乘法表 -->
+    <table>
+        <script>
+            for (x = 1; x < 10; x++) {
+                document.write("<tr>")
+                for (y = 2; y < 10; y++) {
+                    let ans = x * y;
+                    // document.write("<td>" + y + "*" + x + "=" + (y * x) + "</td>")
+                    document.write(`<td>${y}*${x}=${ans}</td>`);
+                }
+                document.write("</tr>")
+            }
+        </script>
+    </table>
+
+</body>
+
+</html>

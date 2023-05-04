@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-7</title>
+</head>
+
+<body>
+    <label for="">攝氏:</label>
+    <input type="text" name="" id="cc">
+    <label for="">華式:</label>
+    <input type="text" name="" id="ff">
+
+    <!-- 請設計一個 function，傳入攝氏溫度可以轉成華氏溫度，傳入華氏溫度可以轉成攝氏溫度 -->
+    <script>
+        const inputcc = document.getElementById("cc");
+        const inputff = document.getElementById("ff");
+
+        inputcc.addEventListener("input", () => {
+            inputff.value = ((inputcc.value) * (9 / 5) + 32).toFixed(1);
+        })
+
+        inputff.addEventListener("input", () => {
+            inputcc.value = (((inputff.value) - 32) * (5 / 9)).toFixed(1);
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

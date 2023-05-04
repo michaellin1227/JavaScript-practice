@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-10</title>
+</head>
+
+<body>
+    <!-- 讓使用者輸入生日計算幾歲 -->
+
+    <label for="">西元年:</label>
+    <input type="text" name="" id="InputYear">
+    <label for="">月:</label>
+    <input type="text" name="" id="InputMonth">
+    <label for="">日:</label>
+    <input type="text" name="" id="InputDay">
+    <input type="submit" value="計算" id="button">
+    <div id="div1"></div>
+
+    <script>
+        let date = new Date();
+        const year1 = document.getElementById("InputYear");
+        const month1 = document.getElementById("InputMonth");
+        const date1 = document.getElementById("InputDay");
+        const btn = document.getElementById("button");
+
+        btn.addEventListener("click", () => {
+
+            const myyear = parseInt(InputYear.value);
+            const mymonth = parseInt(month1.value);
+            const mydate = parseInt(date1.value);
+
+            const cyear = date.getFullYear();
+            const cmonth = date.getMonth() + 1;
+            const cdate = date.getDate();
+
+            const age = cyear - myyear;
+
+            if (mymonth > cmonth) {
+                div1.innerHTML = `${age - 1}歲`;
+            }
+            else if ((mymonth == cmonth) && (mydate > cdate)) {
+                div1.innerHTML = `${age - 1}歲`;
+            }
+            else {
+                div1.innerHTML = `${age}歲`;
+            }
+        }
+
+        )
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
