@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自行創建金字塔</title>
+  </head>
+
+  <body>
+    <!-- 自行輸入金字塔層數 -->
+    <label for="">請輸入層數：</label>
+    <input type="text" name="" id="InputLayer" />
+    <input type="submit" value="送出" id="button" />
+    <div id="message"></div>
+
+    <script>
+      const height = document.querySelector("#InputLayer");
+      const btn = document.querySelector("#button");
+      const word = document.querySelector("#message");
+
+      btn.addEventListener("click", () => {
+        const layer = parseInt(height.value);
+
+        let tree = "";
+        for (i = 1; i <= layer; i++) {
+          let space = "";
+          for (j = 1; j <= layer - i; j++) {
+            space += " ";
+          }
+
+          let star = "";
+          for (k = 1; k <= i * 2 - 1; k++) {
+            star += "*";
+          }
+          tree += space + star + "\n";
+        }
+        console.log(tree);
+        word.innerHTML = `-- 已產生${layer}層金字塔，請至console查看結果 --`;
+      });
+    </script>
+  </body>
+</html>

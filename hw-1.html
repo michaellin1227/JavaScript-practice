@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hw-1</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- 讓使用者可以輸入自己的體重及身高，根據算出來的BMI值顯示下列訊息 -->
     <!-- 
     BMI = 體重(公斤)/身高(公尺)的平方
@@ -20,54 +19,39 @@
     BMI≧35：重度肥胖
      -->
     <label for="">請輸入身高：</label>
-    <input type="text" name="" id="InputHeight">
+    <input type="text" name="" id="InputHeight" />
     <label for="">請輸入體重：</label>
-    <input type="text" name="" id="InputWeight">
-    <input type="submit" value="送出" id="button">
-    <div id="answer">456 </div>
+    <input type="text" name="" id="InputWeight" />
+    <input type="submit" value="送出" id="button" />
+    <div id="answer"></div>
 
     <script>
-        const InputHeight = document.getElementById("InputHeight");
-        const InputWeight = document.getElementById("InputWeight");
-        const btn = document.getElementById("button")
+      const InputHeight = document.getElementById("InputHeight");
+      const InputWeight = document.getElementById("InputWeight");
+      const btn = document.getElementById("button");
 
-        btn.addEventListener("click", function () {
-            const height = parseInt(InputHeight.value); //180
-            const weight = parseInt(InputWeight.value); //70
+      btn.addEventListener("click", function () {
+        const height = parseInt(InputHeight.value); //180
+        const weight = parseInt(InputWeight.value); //70
 
-            const bmi = (weight / ((height / 100) ** 2)).toFixed(2); //21.604
+        const bmi = (weight / (height / 100) ** 2).toFixed(2); //21.604
 
-            if (bmi < 18.5) {
-                answer.innerHTML = (`您的BMI為${bmi} , BMI<18.5 = 過輕`);
-            }
-            else if (bmi >= 18.5 && bmi < 24) {
-                answer.innerHTML = (`您的BMI為${bmi} , 18.5≦BMI＜24 = 正常`);
-            }
-            else if (bmi >= 24 && bmi < 27) {
-                answer.innerHTML = (`您的BMI為${bmi} , 124≦BMI＜27 = 過重`);
-            }
-            else if (bmi >= 27 && bmi < 30) {
-                answer.innerHTML = (`您的BMI為${bmi} , 27≦BMI＜30 = 輕度肥胖`);
-            }
-            else if (bmi >= 30 && bmi < 35) {
-                answer.innerHTML = (`您的BMI為${bmi} , 30≦BMI＜35 = 中度肥胖`);
-            }
-            else if (bmi <= 35) {
-                answer.innerHTML = (`您的BMI為${bmi} , BMI≧35 = 重度肥胖`);
-            }
-            else {
-                answer.innerHTML = (`請輸入正確資訊！`);
-            }
-
-        })
-
-
-
-
-
-
-
+        if (bmi < 18.5) {
+          answer.innerHTML = `您的BMI為${bmi} , BMI<18.5 = 過輕`;
+        } else if (bmi >= 18.5 && bmi < 24) {
+          answer.innerHTML = `您的BMI為${bmi} , 18.5≦BMI＜24 = 正常`;
+        } else if (bmi >= 24 && bmi < 27) {
+          answer.innerHTML = `您的BMI為${bmi} , 24≦BMI＜27 = 過重`;
+        } else if (bmi >= 27 && bmi < 30) {
+          answer.innerHTML = `您的BMI為${bmi} , 27≦BMI＜30 = 輕度肥胖`;
+        } else if (bmi >= 30 && bmi < 35) {
+          answer.innerHTML = `您的BMI為${bmi} , 30≦BMI＜35 = 中度肥胖`;
+        } else if (bmi <= 35) {
+          answer.innerHTML = `您的BMI為${bmi} , BMI≧35 = 重度肥胖`;
+        } else {
+          answer.innerHTML = `請輸入正確資訊！`;
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>
