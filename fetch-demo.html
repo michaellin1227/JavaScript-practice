@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch-demo</title>
+  </head>
+  <body>
+    <div id="div1"></div>
+
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((r) => r.json()) // 取response物件中json的資料
+        .then((datas) => {
+          const info = document.querySelector("#div1");
+          const docfrag = document.createDocumentFragment();
+          datas.forEach((e) => {
+            const ul1 = document.createElement("ul");
+            const li1 = document.createElement("li");
+            const txt1 = document.createTextNode(e.name);
+            li1.appendChild(txt1);
+
+            ul1.appendChild(li1);
+            docfrag.appendChild(ul1);
+          });
+
+          info.appendChild(docfrag);
+        });
+
+      //   const info = document.querySelector("#div1");
+      //   const div2 = document.createElement("ul");
+
+      //   info.append("Some text", div2);
+    </script>
+  </body>
+</html>

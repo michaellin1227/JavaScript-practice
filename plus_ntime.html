@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>輸入值加減交錯運算</title>
+  </head>
+  <!-- 寫一個函式計算下列公式總和
+    1+2-3+4-5+6-7+8-..........N 
+    輸入一個值N計算總和
+-->
+
+  <body>
+    <label for="">請輸入數字：</label>
+    <input type="text" name="" id="InputNum" />
+    <input type="submit" value="送出" id="button" />
+    <div id="ans"></div>
+
+    <script>
+      const number = document.querySelector("#InputNum");
+      const btn = document.querySelector("#button");
+      const ans = document.querySelector("#ans");
+
+      btn.addEventListener("click", () => {
+        const inputnum = number.value;
+        const num = parseInt(number.value);
+        let totalnum;
+        if (!isNaN(num) && Math.round(inputnum) === num) {
+          if (num % 2 === 0 && num !== 0) {
+            totalnum = num / 2 + 2;
+          } else if (num % 2 !== 0) {
+            totalnum = 0 - (num - 3) / 2;
+          } else {
+            totalnum = 0;
+          }
+          ans.innerHTML = `總和為${totalnum}`;
+        } else {
+          ans.innerHTML = `請輸入整數數字`;
+        }
+      });
+    </script>
+  </body>
+</html>

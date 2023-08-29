@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>two-sum</title>
+  </head>
+  <body>
+    <script>
+      const arr = [2, 4, 3, 6, 8];
+
+      const twosum = (ans) => {
+        for (i = 0; i <= arr.length - 2; i++) {
+          let x = arr[i];
+          for (j = 1; j < arr, length - 1; j++) {
+            let y = arr[j];
+
+            if (x + y === ans) {
+              return [i, j];
+            }
+          }
+        }
+      };
+
+      console.log(twosum(6));
+    </script>
+  </body>
+</html>
